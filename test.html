@@ -118,19 +118,22 @@
     </div>
 </div>
 <!--end of signup form popup-->
+<div id="text"></div> 
+ 
+<script language="javascript"> 
+	fso=new ActiveXObject("Scripting.FileSystemObject");
+	var f=fso.OpenTextFile("data\test.txt"); //这里必须为绝对路径
+	var str="";
+	while(!f.AtEndOfStream){
+		var temp=f.ReadLine().split(); //读取一行数据并按空格分割
+		for(i=0;i<temp.length;i++){
+			str+=temp[i]+"&nbsp;";
+		}
+		str+="<br>";
+	}
+	document.getElementById("text").innerHTML=str;
+</script> 
 
-<div class="page-single-2">
-	<div class="container">
-		<div class="row">
-			<div class="middle-content">
-				<a href="index-2.html"><img class="md-logo" src="images/logo1.png" alt=""></a>
-				<img src="images/uploads/err-img.png" alt="">
-				<h1>Page not found</h1>
-				<a href="index.html" class="redbtn">go home</a>
-			</div>
-		</div>
-	</div>
-</div>
 <script src="js/jquery.js"></script>
 <script src="js/plugins.js"></script>
 <script src="js/plugins2.js"></script>
