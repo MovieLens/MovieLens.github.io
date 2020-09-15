@@ -1,0 +1,4 @@
+2020.09.09 09:02:29 INFO  started: Metals version 0.9.3 in workspace '/Users/eileenzhang/Documents/GitHub/recMovies' for client vscode.
+2020.09.09 09:02:30 INFO  time: initialize in 0.94s
+2020.09.09 09:02:31 WARN  no build tool detected in workspace '/Users/eileenzhang/Documents/GitHub/recMovies'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.09.09 13:45:48 INFO  shutting down Metals

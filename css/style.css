@@ -4086,6 +4086,7 @@ ul {
 }
 .movie-items .movie-item .mv-img {
   position: relative;
+
 }
 .movie-items .movie-item .mv-img:after {
   box-shadow: inset -5px -50px 100px -15px #000000;
@@ -4096,12 +4097,13 @@ ul {
   top: 0;
   left: 0;
   bottom: 0;
-  width: 100%;
-  height: 100%;
+  width: 228px;
+  height: 352px;
   content: "";
 }
 .movie-items .movie-item img {
-  width: 100%;
+  width: 228px;
+  height: 352px;
   -webkit-transition: all 0.5s ease-out;
   -moz-transition: all 0.5s ease-out;
   -o-transition: all 0.5s ease-out;
