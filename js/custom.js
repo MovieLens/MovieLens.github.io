@@ -70,7 +70,7 @@ var query_find = function(tableName, userlist, f = 1){
 			for (var i= 0; i < utoi.length; i++){
 				u_i = u_i + "<div class='slide-it'><div class='movie-item'><div class='mv-img'><img src='";
 				u_i = u_i + utoi[i].get("poster");
-				u_i = u_i + "' alt='' width='185' height='284'></div> <div class='hvr-inner'><a  href='moviesingle.html?'> Read more <i class='ion-android-arrow-dropright'></i> </a></div><div class='title-in'><h6><a href='#'>";
+				u_i = u_i + "' alt='' width='185' height='284'></div> <div class='hvr-inner'><a href='moviesingle.html?movieid="+utoi[i].get('movieId')+"'>" + "Read more <i class='ion-android-arrow-dropright'></i> </a></div><div class='title-in'><h6><a href='#'>";
 				u_i = u_i + utoi[i].get("name");
 				u_i = u_i + "</a></h6><p><i class='ion-android-star'></i><span>";
 				u_i = u_i + utoi[i].get("ratingValue");
@@ -83,7 +83,7 @@ var query_find = function(tableName, userlist, f = 1){
 			for (var i= 0; i < itoi.length; i++){
 				i_i = i_i + "<div class='slide-it'><div class='movie-item'><div class='mv-img'><img src='";
 				i_i = i_i + itoi[i].get("poster");
-				i_i = i_i + "' alt='' width='185' height='284'></div> <div class='hvr-inner'><a  href='#'> Read more <i class='ion-android-arrow-dropright'></i> </a></div><div class='title-in'><h6><a href='#'>";
+				i_i = i_i + "' alt='' width='185' height='284'></div> <div class='hvr-inner'><a href='moviesingle.html?movieid="+itoi[i].get('movieId')+"'>" + "Read more <i class='ion-android-arrow-dropright'></i> </a></div><div class='title-in'><h6><a href='#'>";
 				i_i = i_i + itoi[i].get("name");
 				i_i = i_i + "</a></h6><p><i class='ion-android-star'></i><span>";
 				i_i = i_i + itoi[i].get("ratingValue");
@@ -95,13 +95,14 @@ var query_find = function(tableName, userlist, f = 1){
 			for (var i= 0; i < exp.length; i++){
 				e_e = e_e + "<div class='slide-it'><div class='movie-item'><div class='mv-img'><img src='";
 				e_e = e_e + exp[i].get("poster");
-				e_e = e_e + "' alt='' width='185' height='284'></div> <div class='hvr-inner'><a  href='#'> Read more <i class='ion-android-arrow-dropright'></i> </a></div><div class='title-in'><h6><a href='#'>";
+				e_e = e_e + "' alt='' width='185' height='284'></div> <div class='hvr-inner'><a href='moviesingle.html?movieid="+exp[i].get('movieId')+"'>" + "Read more <i class='ion-android-arrow-dropright'></i> </a></div><div class='title-in'><h6><a href='#'>";
 				e_e = e_e + exp[i].get("name");
 				e_e = e_e + "</a></h6><p><i class='ion-android-star'></i><span>";
 				e_e = e_e + exp[i].get("ratingValue");
 				e_e = e_e + "</span> /10</p></div></div></div>";
 			}
 			document.getElementById("exploreDiv").innerHTML = e_e;	
+			
 			multiItemSlider[0].slick.refresh();
 			multiItem[0].slick.refresh();
 			multiItem2[0].slick.refresh();
