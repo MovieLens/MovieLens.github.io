@@ -1,4 +1,4 @@
-var query_find = function(userid, userlist, f = 1){
+var query_find = function(tableName, userlist, f = 1){
 
 	var status = $('#status');
 	var preloader = $('#preloader');
@@ -9,7 +9,7 @@ var query_find = function(userid, userlist, f = 1){
 	Bmob.initialize("36af5f94e9d89174b8fed8de91741696", "085807aa3c443b7e5cb5332158aa7172");
 	var user_movies = Bmob.Object.extend("users_movies");
 	var query = new Bmob.Query(user_movies);
-	query.containedIn(userid, userlist);
+	query.containedIn(tableName, userlist);
 	query.find().then(res => {
 		loves = res[0].get('love');
 		utoi_movies = res[0].get('utoi_movies');
@@ -59,8 +59,8 @@ var query_find = function(userid, userlist, f = 1){
 				data = data + "<div class='movie-item' ><div  class='mv-img' ><a href='#'><img src='" + lov[i].get("poster");
 				data = data + "' alt='' width='228' height='352'></a></div><div class='title-in'><div class='cate'>";
 				data = data + "<span class='blue'>Sci-fi</span>";
-				data = data + "</div><h6>" + lov[i].get("name");
-				data = data + "</h6><p><i class='ion-android-star'></i><span>";
+				data = data + "</div><h6><a href='moviesingle.html?movieid="+lov[i].get('movieId')+"'>" + lov[i].get("name");
+				data = data + "</a></h6><p><i class='ion-android-star'></i><span>";
 				data = data + lov[i].get("ratingValue") + "</span> /10</p></div></div>"
 			}
 			
@@ -70,7 +70,7 @@ var query_find = function(userid, userlist, f = 1){
 			for (var i= 0; i < utoi.length; i++){
 				u_i = u_i + "<div class='slide-it'><div class='movie-item'><div class='mv-img'><img src='";
 				u_i = u_i + utoi[i].get("poster");
-				u_i = u_i + "' alt='' width='185' height='284'></div> <div class='hvr-inner'><a  href='#'> Read more <i class='ion-android-arrow-dropright'></i> </a></div><div class='title-in'><h6><a href='#'>";
+				u_i = u_i + "' alt='' width='185' height='284'></div> <div class='hvr-inner'><a  href='moviesingle.html?'> Read more <i class='ion-android-arrow-dropright'></i> </a></div><div class='title-in'><h6><a href='#'>";
 				u_i = u_i + utoi[i].get("name");
 				u_i = u_i + "</a></h6><p><i class='ion-android-star'></i><span>";
 				u_i = u_i + utoi[i].get("ratingValue");
@@ -500,6 +500,11 @@ dropdownClick.on('click', function(e) {
 	}
 	else if(tname == 'UserId 257'){
 		query_find("userId", ["257"]);
+	}
+	else{
+		var userLst = new Array();
+		userLst[0] = String(Math.floor((Math.random()*600)+1));
+		query_find("userId", userLst);
 	}
 });
 
