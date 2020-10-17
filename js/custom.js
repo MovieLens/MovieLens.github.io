@@ -59,11 +59,11 @@ var query_find = function(tableName, userlist, f = 1){
 			var data = "";
 			for (var i = 0; i < lov.length; i++) {
 				data = data + "<div class='movie-item' ><div  class='mv-img' ><a href='#'><img src='" + lov[i].get("poster");
-				data = data + "' alt='' width='228' height='352'></a></div><div class='title-in'><div class='cate'>";
-				data = data + "<span class='blue'>Sci-fi</span>";
-				data = data + "</div><h6><a href='moviesingle.html?movieid="+lov[i].get('movieId')+"'>" + lov[i].get("name");
+				data = data + "' alt='' width='185' height='284'></div> <div class='hvr-inner'><a href='moviesingle.html?movieid="+lov[i].get('movieId')+"'>" + "Read more <i class='ion-android-arrow-dropright'></i> </a></div><div class='title-in'><h6>";
+				data = data + lov[i].get("name");
 				data = data + "</a></h6><p><i class='ion-android-star'></i><span>";
-				data = data + lov[i].get("ratingValue") + "</span> /10</p></div></div>"
+				data = data + lov[i].get("ratingValue");
+				data = data + "</span> /10</p></div></div></div>";				
 			}
 			
 			document.getElementById("multiItemSliderDiv").innerHTML = data;
@@ -72,7 +72,7 @@ var query_find = function(tableName, userlist, f = 1){
 			for (var i= 0; i < utoi.length; i++){
 				u_i = u_i + "<div class='slide-it'><div class='movie-item'><div class='mv-img'><img src='";
 				u_i = u_i + utoi[i].get("poster");
-				u_i = u_i + "' alt='' width='185' height='284'></div> <div class='hvr-inner'><a href='moviesingle.html?movieid="+utoi[i].get('movieId')+"'>" + "Read more <i class='ion-android-arrow-dropright'></i> </a></div><div class='title-in'><h6><a href='#'>";
+				u_i = u_i + "' alt='' width='185' height='284'></div> <div class='hvr-inner'><a href='moviesingle.html?movieid="+utoi[i].get('movieId')+"'>" + "Read more <i class='ion-android-arrow-dropright'></i> </a></div><div class='title-in'><h6>";
 				u_i = u_i + utoi[i].get("name");
 				u_i = u_i + "</a></h6><p><i class='ion-android-star'></i><span>";
 				u_i = u_i + utoi[i].get("ratingValue");
@@ -85,7 +85,7 @@ var query_find = function(tableName, userlist, f = 1){
 			for (var i= 0; i < itoi.length; i++){
 				i_i = i_i + "<div class='slide-it'><div class='movie-item'><div class='mv-img'><img src='";
 				i_i = i_i + itoi[i].get("poster");
-				i_i = i_i + "' alt='' width='185' height='284'></div> <div class='hvr-inner'><a href='moviesingle.html?movieid="+itoi[i].get('movieId')+"'>" + "Read more <i class='ion-android-arrow-dropright'></i> </a></div><div class='title-in'><h6><a href='#'>";
+				i_i = i_i + "' alt='' width='185' height='284'></div> <div class='hvr-inner'><a href='moviesingle.html?movieid="+itoi[i].get('movieId')+"'>" + "Read more <i class='ion-android-arrow-dropright'></i> </a></div><div class='title-in'><h6>";
 				i_i = i_i + itoi[i].get("name");
 				i_i = i_i + "</a></h6><p><i class='ion-android-star'></i><span>";
 				i_i = i_i + itoi[i].get("ratingValue");
@@ -97,7 +97,7 @@ var query_find = function(tableName, userlist, f = 1){
 			for (var i= 0; i < exp.length; i++){
 				e_e = e_e + "<div class='slide-it'><div class='movie-item'><div class='mv-img'><img src='";
 				e_e = e_e + exp[i].get("poster");
-				e_e = e_e + "' alt='' width='185' height='284'></div> <div class='hvr-inner'><a href='moviesingle.html?movieid="+exp[i].get('movieId')+"'>" + "Read more <i class='ion-android-arrow-dropright'></i> </a></div><div class='title-in'><h6><a href='#'>";
+				e_e = e_e + "' alt='' width='185' height='284'></div> <div class='hvr-inner'><a href='moviesingle.html?movieid="+exp[i].get('movieId')+"'>" + "Read more <i class='ion-android-arrow-dropright'></i> </a></div><div class='title-in'><h6>";
 				e_e = e_e + exp[i].get("name");
 				e_e = e_e + "</a></h6><p><i class='ion-android-star'></i><span>";
 				e_e = e_e + exp[i].get("ratingValue");
